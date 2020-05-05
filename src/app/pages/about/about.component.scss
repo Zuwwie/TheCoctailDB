@@ -1,0 +1,21 @@
+.app-about {
+    text-align: center;
+    color: azure;
+    // margin: auto;
+    img {
+        margin: auto;
+    }
+    div {
+        img {
+            margin: 0;
+        }
+    }
+    a {
+        color: #81816e;
+        &:hover {
+            text-decoration: none;
+            transition: 0.5s;
+            color: yellow;
+        }
+    }
+}
