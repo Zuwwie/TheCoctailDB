@@ -1,0 +1,14 @@
+.app-header {
+    height: 100px;
+    background-color: rgb(29, 0, 13);
+    padding-top: 20px;
+    .center {
+        margin-top: 10px;
+        button {
+            margin-right: 25px;
+        }
+        form {
+            margin-top: 4px;
+        }
+    }
+}
