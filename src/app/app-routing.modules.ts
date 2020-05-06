@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'contact', component: ContactComponent },
-  //   { path: '', component:  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
