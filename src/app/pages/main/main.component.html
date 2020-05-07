@@ -1,1 +1,12 @@
-<p>main works!</p>
+<div class="container app-main">
+  <br />
+  <h3>Random Drinks</h3>
+  <br />
+  <div *ngIf="randomList" class="d-flex flex-wrap justify-content-around">
+    <!-- <ul  class="d-flex flex-wrap"> -->
+    <app-coctail *ngFor="let item of randomList" [listCoctail]="item">
+    </app-coctail>
+    <!-- </ul> -->
+  </div>
+  <hr class="bg-white" />
+</div>

@@ -13,6 +13,10 @@ import { MissingComponent } from './pages/missing/missing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { CoctailComponent } from './pages/main/coctail/coctail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CoctailinfoComponent } from './pages/coctailinfo/coctailinfo.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +31,10 @@ import { ContactComponent } from './pages/contact/contact.component';
     AboutComponent,
     FaqComponent,
     ContactComponent,
+    CoctailComponent,
+    CoctailinfoComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule],
+  imports: [AppRoutingModule, BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
