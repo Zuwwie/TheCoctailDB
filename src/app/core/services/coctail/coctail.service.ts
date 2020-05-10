@@ -18,4 +18,9 @@ export class CoctailService {
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
     );
   }
+  getCoctail(): any {
+    return this.http.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`
+    );
+  }
 }

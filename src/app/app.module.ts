@@ -17,6 +17,8 @@ import { CoctailComponent } from './pages/main/coctail/coctail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CoctailinfoComponent } from './pages/coctailinfo/coctailinfo.component';
+import { IngredientsComponent } from './components/ingredients/ingredients.component';
+// import { Global } from './global.ts/global.ts.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { CoctailinfoComponent } from './pages/coctailinfo/coctailinfo.component'
     ContactComponent,
     CoctailComponent,
     CoctailinfoComponent,
+    IngredientsComponent,
+    // Global.TsComponent,
   ],
   imports: [AppRoutingModule, BrowserModule, HttpClientModule, FormsModule],
   providers: [],

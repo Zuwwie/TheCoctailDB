@@ -1,4 +1,49 @@
-<div class="container text-white">
-  <br />
-  <p>llll</p>
+<div *ngIf="list">
+  <div class="container text-white">
+    <br />
+    <div class="d-flex f-wrap">
+      <figure>
+        <div>
+          <h3>
+            Name:
+            <span class="">{{ list["strDrink"] }}</span>
+          </h3>
+          <img src="{{ list['strDrinkThumb'] }}" alt="coctail" />
+        </div>
+      </figure>
+      <div class="container">
+        <!-- <app-ingredients></app-ingredients> -->
+        <div class="card-text">
+          <b>Ingridients: </b> <br />
+          <div class="d-flex f-wrap">
+            <div class="text-center ingredient">
+              <!-- <div class="text-center"> -->
+              <span>{{ list?.strIngredient1 }}</span>
+              <!-- </div> -->
+              <img
+                src="https://www.thecocktaildb.com/images/ingredients/{{
+                  list?.strIngredient1
+                }}-Medium.png"
+                alt=""
+              />
+              {{ list?.strMeasure1 }}
+            </div>
+            <div class="text-center ingredient">
+              <!-- <div class="text-center"> -->
+              <span>{{ list?.strIngredient2 }}</span>
+              <!-- </div> -->
+              <img
+                src="https://www.thecocktaildb.com/images/ingredients/{{
+                  list?.strIngredient2
+                }}-Medium.png"
+                alt=""
+              />
+              {{ list?.strMeasure2 }}
+            </div>
+            <app-ingredients> </app-ingredients>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
