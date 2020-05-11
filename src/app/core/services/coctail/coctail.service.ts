@@ -18,9 +18,19 @@ export class CoctailService {
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
     );
   }
-  getCoctail(): any {
+  getCoctail(id): any {
     return this.http.get(
-      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007`
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+    );
+  }
+  getByingredient(ingredient): any {
+    return this.http.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
+    );
+  }
+  getGlassInput() {
+    return this.http.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list`
     );
   }
 }

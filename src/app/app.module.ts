@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CoctailinfoComponent } from './pages/coctailinfo/coctailinfo.component';
 import { IngredientsComponent } from './components/ingredients/ingredients.component';
+import { GlassComponent } from './components/glass/glass.component';
 // import { Global } from './global.ts/global.ts.component';
 
 @NgModule({
@@ -36,9 +37,16 @@ import { IngredientsComponent } from './components/ingredients/ingredients.compo
     CoctailComponent,
     CoctailinfoComponent,
     IngredientsComponent,
+    GlassComponent,
     // Global.TsComponent,
   ],
-  imports: [AppRoutingModule, BrowserModule, HttpClientModule, FormsModule],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

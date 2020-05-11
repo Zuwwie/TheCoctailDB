@@ -127,7 +127,7 @@
         </div>
       </div>
     </div>
-    <p>#{{ list.strTags }}</p>
+    <p *ngIf="list.strTags != null">#{{ list.strTags }}</p>
     <p>{{ list.strInstructions }}</p>
   </div>
 </div>

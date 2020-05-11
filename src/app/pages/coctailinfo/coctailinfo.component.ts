@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { CoctailService } from 'src/app/core/services/coctail/coctail.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-coctailinfo',
@@ -11,15 +12,21 @@ export class CoctailinfoComponent implements OnInit {
   inList: any = {};
   ingredientList: any = [];
   ingredientMeasure: any = [];
-  constructor(private coctailServise: CoctailService) {}
+  constructor(
+    private coctailServise: CoctailService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.getInfo();
+    // tslint:disable-next-line:no-string-literal
+    console.log(this.route.fragment['value']);
+    // tslint:disable-next-line:no-string-literal
+    this.getInfo(this.route.fragment['value']);
   }
 
-  getInfo(): void {
+  getInfo(id): void {
     // console.log(`w`);
-    this.coctailServise.getCoctail().subscribe(
+    this.coctailServise.getCoctail(id).subscribe(
       (data) => {
         this.list = data.drinks[0];
         console.log(this.list);

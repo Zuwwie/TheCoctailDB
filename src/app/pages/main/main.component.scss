@@ -1,4 +1,8 @@
 .app-main {
     text-align: center;
     color: white;
+    .myborder {
+        border-right: 1px solid red;
+        padding-right: 20px;
+    }
 }
