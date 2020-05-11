@@ -8,6 +8,9 @@ import { CoctailService } from 'src/app/core/services/coctail/coctail.service';
 })
 export class CoctailinfoComponent implements OnInit {
   @Output() list: any;
+  inList: any = {};
+  ingredientList: any = [];
+  ingredientMeasure: any = [];
   constructor(private coctailServise: CoctailService) {}
 
   ngOnInit(): void {
@@ -20,6 +23,7 @@ export class CoctailinfoComponent implements OnInit {
       (data) => {
         this.list = data.drinks[0];
         console.log(this.list);
+        // console.log(this.list.strIngredient1);
       },
       (error) => {}
     );
