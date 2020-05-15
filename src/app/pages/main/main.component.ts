@@ -9,6 +9,10 @@ import { NgForm, FormGroup } from '@angular/forms';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
+  public alcohol = false;
+  ingredient = false;
+  glass = false;
+  public show = false;
   listglass: any = [];
   newToDoForm: FormGroup;
   list: any = [];
@@ -60,11 +64,26 @@ export class MainComponent implements OnInit {
       (error) => {}
     );
   }
-  formCoctailAlcohol(x) {
-    console.log(x);
+  formCoctailAlcohol(alcohol) {
+    console.log(alcohol);
+    this.coctailServise.getalcohol(alcohol).subscribe(
+      (data) => {
+        this.listForm = data.drinks;
+
+        console.log(this.listForm);
+      },
+      (error) => {}
+    );
   }
-  formCoctailglasses(x) {
-    console.log(x);
+  formCoctailglasses(glass) {
+    console.log(glass);
+    this.coctailServise.sortGlassInput(glass).subscribe(
+      (data) => {
+        this.listForm = data.drinks;
+        console.log(this.listForm);
+      },
+      (error) => {}
+    );
   }
   glasses() {
     this.coctailServise.getGlassInput().subscribe(
@@ -72,8 +91,28 @@ export class MainComponent implements OnInit {
         // tslint:disable-next-line:no-string-literal
         this.listGlas = data['drinks'];
         console.log(this.listGlas);
+        this.listGlas.pop();
+        console.log(this.listGlas);
       },
       (error) => {}
     );
+  }
+  hide(nav) {
+    // console.log(nav);
+    if (nav === `alcohol`) {
+      this.alcohol = !this.alcohol;
+      this.glass = false;
+      this.ingredient = false;
+    }
+    if (nav === `glass`) {
+      this.glass = !this.glass;
+      this.alcohol = false;
+      this.ingredient = false;
+    }
+    if (nav === `ingredient`) {
+      this.ingredient = !this.ingredient;
+      this.glass = false;
+      this.alcohol = false;
+    }
   }
 }

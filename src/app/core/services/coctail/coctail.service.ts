@@ -33,4 +33,14 @@ export class CoctailService {
       `https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list`
     );
   }
+  sortGlassInput(glass): any {
+    return this.http.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glass}`
+    );
+  }
+  getalcohol(alcohol): any {
+    return this.http.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${alcohol}`
+    );
+  }
 }

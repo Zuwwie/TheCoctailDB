@@ -5,5 +5,7 @@
     name="inlineRadioOptions"
     value="{{ listglass.strGlass }}"
   />
-  <label class="form-check-label">{{ listglass.strGlass }}</label>
+  <label class="form-check-label" *ngIf="listglass.strGlass !== ''">{{
+    listglass.strGlass
+  }}</label>
 </div>

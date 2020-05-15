@@ -9,12 +9,16 @@
     <!-- </ul> -->
   </div>
   <hr class="bg-white" />
-  <div class="d-flex">
+  <div class="nav-app">
     <nav class="myborder">
-      <h4>Filter</h4>
-      <h6>BY INGRADIENTS</h6>
+      <h4>Filter:</h4>
+      <br />
+      <h6 (click)="hide('ingredient')" class="btn btn-outline-light">
+        Ingradient
+      </h6>
       <form
         #myForm="ngForm"
+        *ngIf="ingredient"
         (change)="formCoctail($event.target.value)"
         class="d-flex flex-column"
       >
@@ -88,21 +92,10 @@
           />
           <label class="form-check-label" for="inlineRadio7">Bourbon</label>
         </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio8"
-            value="22222222222"
-          />
-          <label class="form-check-label" for="inlineRadio8"
-            >2222222222222222</label
-          >
-        </div>
       </form>
-      <h6>BY Alcohol</h6>
+      <h6 (click)="hide('alcohol')" class="btn btn-outline-light">Alcohol</h6>
       <form
+        *ngIf="alcohol"
         (change)="formCoctailAlcohol($event.target.value)"
         class="d-flex flex-column"
       >
@@ -129,22 +122,38 @@
           >
         </div>
       </form>
-      <h6>BY Glasses</h6>
-      <form
-        (change)="formCoctailglasses($event.target.value)"
-        class="d-flex flex-column"
-      >
-        <app-glass
-          *ngFor="let item of listGlas"
-          [listglass]="item"
+      <h6 (click)="hide('glass')" class="btn btn-outline-light">Glasses</h6>
+
+      <div>
+        <form
+          *ngIf="glass"
+          (change)="formCoctailglasses($event.target.value)"
           class="d-flex flex-column"
         >
-        </app-glass>
-      </form>
+          <app-glass
+            *ngFor="let item of listGlas"
+            [listglass]="item"
+            class="d-flex flex-column"
+          >
+          </app-glass>
+        </form>
+      </div>
     </nav>
-    <div class="d-flex flex-wrap justify-content-around">
-      <app-coctail *ngFor="let item of listForm" [listCoctail]="item">
-      </app-coctail>
+
+    <div>
+      <h4 *ngIf="listForm.length !== 0" class="text-white center">
+        Done: {{ listForm.length }} coctails
+      </h4>
+      <div
+        class="d-flex flex-wrap justify-content-around align-items-start align-self-start"
+      >
+        <app-coctail
+          *ngFor="let item of listForm"
+          [listCoctail]="item"
+          class="app-coctail"
+        >
+        </app-coctail>
+      </div>
     </div>
     <!-- <hr class="bg-white" /> -->
   </div>

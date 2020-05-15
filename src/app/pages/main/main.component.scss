@@ -5,4 +5,32 @@
         border-right: 1px solid red;
         padding-right: 20px;
     }
+    .app-coctail {
+        max-width: 200px;
+        min-height: 200px;
+    }
+    nav {
+        width: 170px;
+    }
+    .nav-app {
+        display: flex;
+    }
+    @media screen and (max-width: 740px) {
+        .myborder {
+            border: none;
+            padding: 0px;
+            text-align: center;
+            margin: auto;
+        }
+        // nav {
+        //     width: 110px;
+        // }
+        .nav-app {
+            display: block;
+        }
+    }
+    .btn {
+        height: 40px;
+        width: 100px;
+    }
 }
